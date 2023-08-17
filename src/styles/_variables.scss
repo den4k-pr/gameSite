@@ -1,0 +1,72 @@
+
+
+$white: #ffffff;
+$blue-green: #52C5A9;
+
+$maxWidht: 1439;
+
+@mixin flex-box {
+    display: flex;
+    align-items: center;
+}
+@mixin flex-box-carts($pcSize, $modSize, $justifyValue) {
+    $maxWidht: 1439;
+    
+    $addSize: $pcSize - $modSize;
+    $addModSize: $addSize + $addSize * 0.7;
+    @media (max-width: 767px) {
+        gap: calc(#{$modSize + px} + #{$addModSize} * ((100vw - 320px) / #{$maxWidht}));
+    }
+    @media (min-width: 767px) {
+        gap: calc(#{$modSize + px} + #{$addSize} * (100vw / #{$maxWidht}));
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: #{$justifyValue};
+    align-items: center;
+}
+
+@mixin button-red($radius, $puddingTopBottom, $puddingLeftRight, $pcSize, $modSize) {
+    $addSize: $pcSize - $modSize;
+    $addModSize: $addSize + $addSize * 0.7;
+    @media (max-width: 767px) {
+        font-size: calc(#{$modSize + px} + #{$addModSize} * ((100vw - 320px) / #{$maxWidht}));
+    }
+    @media (min-width: 767px) {
+        font-size: calc(#{$modSize + px} + #{$addSize} * (100vw / #{$maxWidht}));
+    }
+
+    border-radius: #{$radius + px};
+
+    background: var(--unnamed, #F1433A);
+    box-shadow: 0px 4px 39px 0px rgba(231, 87, 87, 0.25);
+
+    padding: #{$puddingTopBottom + px $puddingLeftRight + px};
+    font-weight: 700;
+
+    transition: .2s;
+    
+    &:hover{
+        background: var(--hover, #FC4339);
+        box-shadow: 0px 4px 39px 0px rgba(231, 87, 87, 0.25);
+
+    }
+    
+    &:active{
+        background: var(--unnamed, #F1433A);
+        box-shadow: 0px 4px 39px 0px rgba(231, 87, 87, 0.25), 0px 4px 26px 0px rgba(79, 8, 8, 0.61) inset;
+
+    }
+}
+
+@mixin adaptiv-font($pcSize, $modSize) {
+    $addSize: $pcSize - $modSize;
+    $addModSize: $addSize + $addSize * 0.7;
+    @media (max-width: 767px) {
+        font-size: calc(#{$modSize + px} + #{$addModSize} * ((100vw - 320px) / #{$maxWidht}));
+    }
+    @media (min-width: 767px) {
+        font-size: calc(#{$modSize + px} + #{$addSize} * (100vw / #{$maxWidht}));
+    }
+}

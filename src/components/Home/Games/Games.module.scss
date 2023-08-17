@@ -1,0 +1,139 @@
+
+@import "@/styles/_variables.scss";
+
+.game{
+
+    &__games{
+        @include flex-box-carts(30, 20, "center");
+
+        .gamePart{
+            position: relative;
+            overflow: hidden;
+
+            max-width: 340px;
+            width: 100%;
+            height: 500px;
+            border-radius: 15px;
+
+            &__image{
+                object-fit: cover;
+
+            }
+
+            &__content{
+                position: absolute;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+
+                width: 100%;
+                height: 100%;
+
+                z-index: 3;
+                top: 0;
+                left: 0;
+
+                padding: 17px 20px 20px 20px;
+
+                &_top{
+                    @include flex-box;
+                    justify-content: space-between;
+
+                    &-time{
+                        font-size: 16px;
+                    }
+
+                    &-category{
+                        font-size: 14px;
+                        border-radius: 10px;
+                        background: linear-gradient(90deg, rgba(96, 201, 70, 0.54) 0%, #2FFF91 100%);
+                        padding: 8px 32px;
+                    }
+                }
+
+                &_bottom{
+
+                    &-name{
+                        font-size: 22px;
+                        line-height: 32px;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                    }
+
+                    &-list{
+                        padding: 7px 0 27px 17px;
+
+                        li{
+                            list-style: initial;
+                            color: #52C5A9;
+                            line-height: 20px;
+                        }
+                    }
+
+                    &_box{
+                        @include flex-box;
+                        justify-content: space-between;
+
+                        &-price{
+                            font-size: 30px;
+                            font-weight: 600;
+                            line-height: 40px;
+                            position: relative;
+
+                            &::before{
+                                content: "Price";
+                                color: #6C6C6C;
+
+                                font-size: 14px;
+                                font-weight: 400;
+                                letter-spacing: -0.35px;
+
+                                position: absolute;
+
+                                top: -25px;
+                                left: 0;
+                            }
+                        }
+
+                        &-button{
+                            @include button-red(9, 15, 15, 20, 14);
+                        }
+
+                        @media(min-width: 767px) {
+                            &-button{
+                                @include button-red(15, 15, 22, 20,  14);
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media(min-width: 767px) {
+                &__content{
+                    padding: 17px 33px 33px 33px;
+                }
+            }
+
+            &::after{
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                z-index: 2;
+
+                transition: .3s;
+                box-shadow: inset 0 0px 0px 0px #280A0A;
+                position: absolute;
+            }
+
+            &:hover{
+                
+                &::after{
+                    box-shadow: inset 0 -50px 70px 0px #280A0A;
+                }
+            }
+        }
+    }
+}

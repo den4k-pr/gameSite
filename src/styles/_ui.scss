@@ -1,0 +1,141 @@
+
+@import "./_variables.scss";
+
+._titleContent{
+    @include flex-box;
+
+    position: relative;
+
+    padding: 34px 0 34px 0;
+
+    &-image{
+        object-fit: contain;
+        position: absolute;
+        left: 0;
+        top: 0;
+        
+        width: 22px !important;
+        height: 35px;
+    }
+
+    &-title{
+        font-weight: 700;
+        line-height: 43px;
+        @include adaptiv-font(32, 20);
+        padding-left: 35px;
+    }
+
+    @media (min-width: 767px) {
+
+        &-title{
+            padding-left: 45px;
+        }
+
+        &-image{
+            width: 30px !important;
+            height: 40px;
+        }
+    }
+}
+
+
+.review__buttons-allReviews{
+    border-radius: 10px;
+    background-color: rgba(81, 179, 127, 0.06);
+    padding: 15px 92px 15px 17px;
+    transition: .1s;
+
+    border-top: 1px solid #298152;
+    border-left: 1px solid #298152;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+
+    position: relative;
+
+    &::before{
+        content: "";
+        display: block;
+        top: 12px;
+        right: 17px;
+
+        width: 70px;
+        height: 20px;
+
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("/icons/star-text.png");
+    }
+
+    &:hover{
+        background-color: rgba(81, 179, 127, 0.27);
+    }
+
+    &:active{
+        background: rgba(81, 179, 127, 0.27);
+        box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.57) inset;
+        border: 1px solid #298152;
+    }
+}
+
+
+
+.header__menu .header__right_search{
+    display: block !important;
+}
+.header__right_search{
+    position: relative;
+    display: none;
+    
+    input{
+        border-radius: 8px;
+        background: rgba(3, 3, 3, 0.34);
+        backdrop-filter: blur(1px);
+        width: 220px;
+        line-height: 35px;
+        letter-spacing: -0.35px;
+        padding: 0 19px;
+        color: #757575;
+    }
+
+    img{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (min-width: 767px) {
+    .header__right_search{
+        display: block;
+    }
+}
+
+
+.header__menu_body_content-list-link{
+    color: #797979;
+
+    font-size: 18px;
+    line-height: 135.7%;
+
+    transition: .2s;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 12px !important;
+
+    img{
+        opacity: .6;
+
+        transition: .2s;
+    }
+
+    &:hover{
+        color: #E5453D;
+
+        img{
+            opacity: 1;
+        }
+    }
+}

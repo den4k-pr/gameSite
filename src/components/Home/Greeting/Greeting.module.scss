@@ -1,0 +1,57 @@
+
+@import "@/styles/_variables.scss";
+
+
+
+.greeting{
+    position: relative;
+
+    color: #fff;
+
+    padding: 128px 0;
+
+    height: 700px;
+
+    &__slider{
+
+        img{
+            object-fit: cover;
+            object-position: 60%;
+        }
+    }
+
+    &_title{
+        @include adaptiv-font(48, 28);
+        font-weight: 700;
+        line-height: 126.2%;
+        padding-bottom: 11px;
+        max-width: 600px;
+    }
+
+    &_subTitle{
+        @include adaptiv-font(16, 14);
+        max-width: 350px;
+        padding-bottom: 43px;
+        line-height: 18px;
+
+        span{
+            font-weight: 700;
+        }
+    }
+
+    &_button{
+        @include button-red(9, 15, 15, 20, 14);
+    }
+
+}
+
+@media(min-width: 767px) {
+    .greeting{
+        height: 770px;
+        
+        object-position: center;
+    }
+    .greeting__button{
+        @include button-red(15, 20, 25, 20, 14);
+    }
+}

@@ -1,0 +1,44 @@
+@import "@/styles/_variables.scss";
+
+
+.navigation{
+    margin-top: -150px;
+
+    &__list{
+        @include flex-box-carts(0, 0, "center");
+
+        border-radius: 11px;
+        background: #0F0F0F;
+        box-shadow: 0px 4px 45px 0px rgba(0, 0, 0, 0.25);
+        padding: 10px 18px;
+
+        &_link{
+            transition: .2s;
+
+            cursor: pointer;
+
+            a{
+                display: block;
+                color: #797979;
+                padding: 15px;
+                font-size: 14px;
+
+                &:hover{
+                    @include button-red(9, 15, 15, 20, 14);
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 767px) {
+    .navigation__list_link a{
+        font-size: 18px;
+        padding: 18px 17px;
+        display: block;
+    }
+    .navigation__list_link a:hover{
+        @include button-red(15, 18, 18, 18, 14);
+    }
+}

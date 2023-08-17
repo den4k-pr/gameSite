@@ -1,0 +1,68 @@
+
+@import "@/styles/_variables.scss";
+
+.order{
+    padding-bottom: 70px;
+
+    &__orders{
+        @include flex-box-carts(30, 20, "center");
+
+        .orderPart:nth-child(2) img,
+        .orderPart:nth-child(4) img{
+            padding-bottom: 20px;
+        }
+
+        .orderPart{
+            position: relative;
+
+            width: 250px;
+            height: 255px;
+
+            img{
+                object-fit: contain;
+
+                transition: .2s;
+                opacity: 0.5;
+            }
+
+            &__content{
+                position: absolute;
+                text-align: center;
+
+                top: 45px;
+                left: 0;
+
+                &-name{
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 26px;
+                    padding-bottom: 4px;
+                    padding-top: 14px;
+                }
+
+                &-description{
+                    color: #9A9A9A;
+                    font-size: 16px;
+                    line-height: 22px;
+                    max-width: 247px;
+                }
+            }
+            div svg defs linearGradient stop{
+                transition: .2s;
+            }
+            &:hover{
+                div svg defs linearGradient stop:first-child,
+                div svg defs linearGradient stop:first-child{
+                    stop-color: #FF0C00;
+                }
+                div svg defs linearGradient stop:last-child,
+                div svg defs linearGradient stop:last-child{
+                    stop-color: #EEFF2D;
+                }
+                img{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

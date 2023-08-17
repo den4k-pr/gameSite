@@ -1,0 +1,97 @@
+
+@import "@/styles/_variables.scss";
+
+
+.review{
+
+    &__reviews{
+        @include flex-box-carts(30, 20, "center");
+
+        padding-bottom: 40px;
+
+        .reviewPart{
+            border-radius: 15px;
+            max-width: 348px;
+            transition: .2s;
+
+            background: #201E1E;
+
+            overflow: hidden;
+
+            &__content{
+                padding: 16px 27px;
+
+                &_top{
+                    @include flex-box;
+                    justify-content: space-between;
+
+                    &-stars{
+                        @include flex-box;
+
+                        gap: 2px;
+
+                        img{
+                            width: 25px;
+                            height: 25px;
+                            padding: 6px;
+                            border-radius: 5px;
+                            background: linear-gradient(180deg, #51B37F 0%, #298152 100%);
+                        }
+                    }
+
+                    &-time{
+                        color: #555;
+                        font-size: 12px;
+                    }
+                }
+
+                &_bottom{
+                    padding-top: 18px;
+
+                    &-name{
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 27px;
+                    }
+
+                    &-description{
+                        padding: 6px 0 9px 0;
+
+                        line-height: 20px;
+                    }
+
+                    &-text{
+                        color: #555;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            &:hover{
+                background: #262927;
+            }
+        }
+    }
+
+    &__buttons{
+        @include flex-box-carts(20, 12, "center");
+
+        &-createReview{
+            border-radius: 10px;
+            background: linear-gradient(180deg, #51B37F 0%, #298152 100%);
+
+            padding: 15px 23px;
+            transition: .2s ease;
+
+            font-weight: 700;
+
+            &:hover{
+                background: linear-gradient(180deg, #2FDE81 0%, #298152 100%);
+            }
+
+            &:active{
+                background: linear-gradient(180deg, #2FDE81 0%, #1e5e3c 100%);
+            }
+        }
+    }
+}
